@@ -84,11 +84,46 @@ class StackQueue {
 
   enqueue(value) {
     const newNode = new Node(value);
-    if (this.inStack.size === 0 && this.outStack.size === 0) {
+    if (!this.front) {
       this.front = newNode;
       this.back = newNode;
+    } else {
+      this.back.next = newNode;
+      this.back = newNode;
+      console.log("this.front => ", this.front);
+      console.log("this.back => ", this.back);
     }
   }
+  /*
+  stackQueue {
+    inStack = {}
+    outStack = {}
+    front = null;
+    back = null;
+  }
+
+  enqueue('a') =>
+    newNode = {value: 'a', next: null};
+  stackQueue {
+    inStack = {}
+    outStack = {}
+    front = {value: 'a', next: null};
+    back = {value: 'a', next: null};
+  }
+
+  enqueue('b') =>
+    newNode = {value: 'b', next: null};
+  stackQueue {
+    inStack = {}
+    outStack = {}
+    front = {value: 'a', next: null};
+    back = {value: 'a', next: {value: 'b', next: null}};
+  }
+
+  enqueue('c') =>
+    newNode = {value: 'c', next: null};
+
+  */
 
   dequeue() {}
 
