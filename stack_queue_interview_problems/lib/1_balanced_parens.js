@@ -75,6 +75,75 @@
 // -----------
 // Let's code!
 // -----------
-function balancedParens(str) {}
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class Stack {
+  constructor() {
+    this.top = null;
+    this.bottom = null;
+    this.length = 0;
+  }
+
+  push(value) {
+    const newNode = new Node(value);
+    if (!this.bottom) {
+      this.top = newNode;
+      this.bottom = newNode;
+    } else {
+      const temp = this.top;
+      this.top = newNode;
+      this.top.next = temp;
+    }
+    this.length += 1;
+    return this.length;
+  }
+
+  pop() {
+    const temp = this.top;
+    if (!this.bottom) {
+      return null;
+    }
+    if (this.length === 1) {
+      this.top = null;
+      this.bottom = null;
+    } else {
+      this.top = this.top.next;
+    }
+    this.length -= 1;
+    return temp.value;
+  }
+
+  size() {
+    return this.length;
+  }
+}
+
+function balancedParens(str) {
+  const stack = new Stack();
+  const pairs = {
+    "(": ")",
+    "[": "]",
+    "{": "}"
+  };
+
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+
+    if (pairs[char]) {
+      stack.push(char);
+    } else if (char === "}" || char === "]" || char === ")") {
+      if (pairs[stack.pop()] !== char) {
+        return false;
+      }
+    }
+  }
+  return stack.length === 0;
+}
 
 exports.balancedParens = balancedParens;
