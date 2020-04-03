@@ -92,7 +92,8 @@ class StackQueue {
       this.back = newNode;
     }
 
-    this.inStack.push(new Node(newQueueNode.value));
+    this.inStack.push(new Node(newNode.value));
+    return this.size();
   }
   /*
   stackQueue {
@@ -125,9 +126,28 @@ class StackQueue {
 
   */
 
-  dequeue() {}
+  dequeue() {
+    if (!this.front) {
+      return null;
+    } else if (this.size() === 1) {
+      this.front = null;
+      this.back = null;
+    } else {
+      this.front = this.front.next;
+    }
 
-  size() {}
+    if (this.outStack.size() === 0) {
+      while (this.inStack.size() > 0) {
+        this.outStack.push(this.inStack.pop());
+      }
+    }
+    let x = this.outStack.pop();
+    return x;
+  }
+
+  size() {
+    return this.inStack.length + this.outStack.length;
+  }
 }
 
 exports.Node = Node;
