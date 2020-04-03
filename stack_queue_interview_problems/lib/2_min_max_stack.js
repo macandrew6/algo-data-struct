@@ -85,14 +85,16 @@ class MinMaxStack {
     const newNode = new Node(value);
     if (
       !this.maxValueStorage.length ||
-      this.maxValueStorage[this.maxValueStorage.length - 1] <= newNode.value
+      this.maxValueStorage[this.maxValueStorage.length - 1].value <=
+        newNode.value
     ) {
       this.maxValueStorage.push(newNode);
     }
 
     if (
       !this.minValueStorage.length ||
-      this.minValueStorage[this.minValueStorage.length - 1] >= newNode.value
+      this.minValueStorage[this.minValueStorage.length - 1].value >=
+        newNode.value
     ) {
       this.minValueStorage.push(newNode);
     }
@@ -116,11 +118,17 @@ class MinMaxStack {
       return null;
     }
 
-    if (this.top.value === this.maxValueStorage[this.maxValueStorage - 1]) {
+    if (
+      this.top.value ===
+      this.maxValueStorage[this.maxValueStorage.length - 1].value
+    ) {
       this.maxValueStorage.pop();
     }
 
-    if (this.top.value === this.minValueStorage[this.minValueStorage - 1]) {
+    if (
+      this.top.value ===
+      this.minValueStorage[this.minValueStorage.length - 1].value
+    ) {
       this.minValueStorage.pop();
     }
 
@@ -130,8 +138,9 @@ class MinMaxStack {
     } else {
       this.top = this.top.next;
     }
+
     this.length -= 1;
-    return temp.value;
+    return temp;
   }
 
   size() {
@@ -139,11 +148,11 @@ class MinMaxStack {
   }
 
   min() {
-    return this.minValueStorage[this.minValueStorage - 1] || null;
+    return this.minValueStorage[this.minValueStorage.length - 1] || null;
   }
 
   max() {
-    return this.maxValueStorage[this.maxValueStorage - 1] || null;
+    return this.maxValueStorage[this.maxValueStorage.length - 1] || null;
   }
 }
 
