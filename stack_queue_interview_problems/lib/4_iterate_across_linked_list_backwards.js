@@ -6,11 +6,11 @@
 // Prompt:
 // -------
 //
-// Iterate over a Singly Linked List of primitives backwards. When finished, 
-// return a string representing the original linked list's values backwards 
+// Iterate over a Singly Linked List of primitives backwards. When finished,
+// return a string representing the original linked list's values backwards
 // in the following format:
 //
-//                             'A -> B -> C -> D' 
+//                             'A -> B -> C -> D'
 //
 // ------------
 // Constraints:
@@ -26,9 +26,56 @@
 // Let's code!
 // -----------
 
-function iterateAcrossLinkedListBackwards(linkedList) {
-    // TODO: Implement the iterateAcrossLinkedListBackwards function here
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
 
+class Stack {
+  constructor() {
+    this.top = null;
+    this.bottom = null;
+    this.length = 0;
+  }
+
+  push(value) {
+    const newNode = new Node(value);
+    if (!this.bottom) {
+      this.top = newNode;
+      this.bottom = newNode;
+    } else {
+      let temp = this.top;
+      this.top = newNode;
+      this.top.next = temp;
+    }
+    this.length += 1;
+    return this.length;
+  }
+
+  pop() {
+    const temp = this.top;
+    if (!this.bottom) {
+      return null;
+    }
+    if (this.length === 1) {
+      this.top = null;
+      this.bottom = null;
+    } else {
+      this.top = this.top.next;
+    }
+    this.length -= 1;
+    return temp;
+  }
+
+  size() {
+    return this.length;
+  }
+}
+
+function iterateAcrossLinkedListBackwards(linkedList) {
+  // TODO: Implement the iterateAcrossLinkedListBackwards function here
 }
 
 exports.iterateAcrossLinkedListBackwards = iterateAcrossLinkedListBackwards;
