@@ -66,7 +66,7 @@ class Stack {
       this.top = this.top.next;
     }
     this.length -= 1;
-    return temp;
+    return temp.value;
   }
 
   size() {
@@ -78,6 +78,19 @@ function iterateAcrossLinkedListBackwards(linkedList) {
   const stack = new Stack();
   let current = linkedList.head;
   let result = "";
+
+  while (current !== null) {
+    stack.push(current);
+    current = current.next;
+  }
+
+  while (stack.size() > 0) {
+    if (stack.size() > 1) {
+      result += `${stack.pop().value} -> `;
+    } else {
+      result += `${stack.pop().value}`;
+    }
+  }
 
   return result;
 }
