@@ -77,6 +77,9 @@ class Stack {
 function iterateAcrossLinkedListBackwards(linkedList) {
   const stack = new Stack();
   let current = linkedList.head;
+  let result = "";
+
+  return result;
 }
 
 exports.iterateAcrossLinkedListBackwards = iterateAcrossLinkedListBackwards;
