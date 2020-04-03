@@ -138,9 +138,13 @@ class MinMaxStack {
     return this.length;
   }
 
-  min() {}
+  min() {
+    return this.minValueStorage[this.minValueStorage - 1] || null;
+  }
 
-  max() {}
+  max() {
+    return this.maxValueStorage[this.maxValueStorage - 1] || null;
+  }
 }
 
 // Forgetting something down here?
