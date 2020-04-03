@@ -91,6 +91,8 @@ class StackQueue {
       this.back.next = newNode;
       this.back = newNode;
     }
+
+    this.inStack.push(new Node(newQueueNode.value));
   }
   /*
   stackQueue {
