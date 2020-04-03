@@ -6,15 +6,15 @@
 // Prompt:
 // -------
 //
-// Modify the definition of the Stack class provided to create an enhanced 
+// Modify the definition of the Stack class provided to create an enhanced
 // version of a Stack data structure called MinMaxStack.
 //
 // A MinMaxStack has all of the same behavior as a Stack, but can also return
 // the node with the minimum or maximum value in constant time.
 //
-// You may alter any of the original Stack's methods, including the 
+// You may alter any of the original Stack's methods, including the
 // constructor.
-//  
+//
 // Values of nodes of the MinMaxStack are always guaranteed to be numbers.
 //
 //
@@ -65,51 +65,84 @@
 // Let's code!
 // -----------
 class Node {
-    constructor(val) {
-        this.value = val;
-        this.next = null;
-    }
+  constructor(val) {
+    this.value = val;
+    this.next = null;
+  }
 }
 
 // Refactor the regular Stack below into a MinMaxStack!
-class Stack {
-    constructor() {
-        this.top = null;
-        this.bottom = null;
-        this.length = 0;
+class MinMaxStack {
+  constructor() {
+    this.top = null;
+    this.bottom = null;
+    this.length = 0;
+    this.maxValueStorage = [];
+    this.minValueStorage = [];
+  }
+
+  push(value) {
+    const newNode = new Node(value);
+    if (
+      !this.maxValueStorage.length ||
+      this.maxValueStorage[this.maxValueStorage.length - 1] <= newNode.value
+    ) {
+      this.maxValueStorage.push(newNode);
     }
 
-    push(val) {
-        const newNode = new Node(val);
-        if (!this.top) {
-            this.top = newNode;
-            this.bottom = newNode;
-        } else {
-            const temp = this.top;
-            this.top = newNode;
-            this.top.next = temp;
-        }
-        return ++this.length;
+    if (
+      !this.minValueStorage.length ||
+      this.minValueStorage[this.minValueStorage.length - 1] >= newNode.value
+    ) {
+      this.minValueStorage.push(newNode);
     }
 
-    pop() {
-        if (!this.top) {
-            return null;
-        }
-        const temp = this.top;
-        if (this.top === this.bottom) {
-            this.bottom = null;
-        }
-        this.top = this.top.next;
-        this.length--;
-        return temp.value;
+    if (!this.top) {
+      this.top = newNode;
+      this.bottom = newNode;
+    } else {
+      let temp = this.top;
+      this.top = newNode;
+      this.top.next = temp;
+    }
+    this.length += 1;
+    return this.length;
+  }
+
+  pop() {
+    const temp = this.top;
+
+    if (!this.bottom) {
+      return null;
     }
 
-    size() {
-        return this.length;
+    if (this.top.value === this.maxValueStorage[this.maxValueStorage - 1]) {
+      this.maxValueStorage.pop();
     }
+
+    if (this.top.value === this.minValueStorage[this.minValueStorage - 1]) {
+      this.minValueStorage.pop();
+    }
+
+    if (this.length === 1) {
+      this.top = null;
+      this.bottom = null;
+    } else {
+      this.top = this.top.next;
+    }
+    this.length -= 1;
+    return temp.value;
+  }
+
+  size() {
+    return this.length;
+  }
+
+  min() {}
+
+  max() {}
 }
 
-// Forgetting something down here? 
+// Forgetting something down here?
 exports.Node = Node;
-exports.Stack = Stack;
+exports.MinMaxStack = MinMaxStack;
