@@ -86,6 +86,7 @@ function iterateAcrossLinkedListBackwards(linkedList) {
 
   while (stack.size() > 0) {
     if (stack.size() > 1) {
+      //whats going on here, why is stack.pop() returning a node?git
       result += `${stack.pop().value} -> `;
     } else {
       result += `${stack.pop().value}`;
