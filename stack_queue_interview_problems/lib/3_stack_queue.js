@@ -90,8 +90,6 @@ class StackQueue {
     } else {
       this.back.next = newNode;
       this.back = newNode;
-      console.log("this.front => ", this.front);
-      console.log("this.back => ", this.back);
     }
   }
   /*
