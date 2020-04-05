@@ -9,8 +9,6 @@ class TreeNode {
 class BST {
   constructor() {
     this.root = null;
-    this.left = [];
-    this.right = [];
   }
 }
 
