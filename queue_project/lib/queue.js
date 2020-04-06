@@ -12,7 +12,7 @@
 // Constraints:
 // ------------
 //
-// Make sure the time and space complexity of each is equivalent to those 
+// Make sure the time and space complexity of each is equivalent to those
 // in the table provided in the Time and Space Complexity Analysis section
 // of your Stack reading!
 //
@@ -40,8 +40,10 @@ class Queue {
       this.front = newNode;
       this.back = newNode;
     } else {
+      // changes next pointer of the node we are referencing
       this.back.next = newNode;
-      this.back = this.back.next;
+      // changes the pointer of the this.back value to a new node
+      this.back = newNode;
     }
     this.length += 1;
     return this.length;
