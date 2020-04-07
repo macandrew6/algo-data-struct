@@ -44,7 +44,19 @@ class BST {
     }
   }
 
-  searchIter(value) {}
+  searchIter(value) {
+    let currNode = this.root;
+    while (currNode !== null) {
+      if (value < currNode.val) {
+        currNode = currNode.left;
+      } else if (value > currNode.val) {
+        currNode = currNode.right;
+      } else {
+        return true;
+      }
+    }
+    return false;
+  }
 }
 
 module.exports = {
