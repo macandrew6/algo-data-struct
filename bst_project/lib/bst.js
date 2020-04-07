@@ -37,6 +37,10 @@ class BST {
 
     if (value < root.val) {
       return this.searchRecur(value, root.left);
+    } else if (value > root.val) {
+      return this.searchRecur(value, root.right);
+    } else {
+      return true;
     }
   }
 
