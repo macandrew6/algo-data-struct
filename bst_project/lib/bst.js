@@ -32,9 +32,11 @@ class BST {
     }
   }
 
-  searchRecur(value) {
-    if (!this.root) {
-      return false;
+  searchRecur(value, root = this.root) {
+    if (!root) return false;
+
+    if (value < root.val) {
+      return this.searchRecur(value, root.left);
     }
   }
 
