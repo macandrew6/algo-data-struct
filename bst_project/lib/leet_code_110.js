@@ -8,4 +8,8 @@ const getHeight = root => {
 
 function isBalanced(root) {
   // iterate through the tree and return true or false if the tree is balanced
+  // what is going on with this fn?
+  let heightBalanced =
+    Math.abs(getHeight(root.left) + getHeight(root.right)) <= 1;
+  return heightBalanced && isBalanced(root.left) && isBalanced(root.right);
 }
