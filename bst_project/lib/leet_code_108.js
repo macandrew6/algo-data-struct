@@ -17,4 +17,12 @@ function sortedArrayToBST(nums) {
 
   let midIdx = Math.floor(nums.length / 2);
   let root = new TreeNode(nums[midIdx]);
+
+  let leftSubTree = sortedArrayToBST(nums.slice(0, midIdx));
+  let rightSubTree = sortedArrayToBST(nums.slice(midIdx + 1));
+
+  root.left = leftSubTree;
+  root.right = rightSubTree;
+
+  return root;
 }
