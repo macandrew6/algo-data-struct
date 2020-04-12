@@ -1,5 +1,6 @@
 function inOrderArray(root) {
-  if (!root) return null;
+  if (!root) return [];
+  return [...inOrderArray(root.left), root.val, ...inOrderArray(root.right)];
 }
 
 function postOrderArray(root) {}
