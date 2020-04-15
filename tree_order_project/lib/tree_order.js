@@ -5,10 +5,11 @@ function inOrderArray(root) {
 
 function postOrderArray(root) {
   if (!root) return [];
+  // deconstructs the return value of postOrderArray
   return [
-    root.val,
     ...postOrderArray(root.left),
-    ...postOrderArray(root.right)
+    ...postOrderArray(root.right),
+    root.val
   ];
 }
 
