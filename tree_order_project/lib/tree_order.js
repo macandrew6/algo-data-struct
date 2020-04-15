@@ -10,7 +10,7 @@ function postOrderArray(root) {
   if (!root) return [];
   // deconstructs the return value of postOrderArray(root) =>
   // which is an array
-
+  console.log(root.left);
   return [
     ...postOrderArray(root.left),
     ...postOrderArray(root.right),
