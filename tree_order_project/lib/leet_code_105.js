@@ -7,3 +7,5 @@ function buildTree(preorder, inorder) {
   // if the tree is empty return null
   if (!preorder.length && !inorder.length) return null;
 }
+
+console.log(buildTree([], []));
