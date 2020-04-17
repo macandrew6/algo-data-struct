@@ -28,4 +28,4 @@ function buildTree(preorder, inorder) {
 let preorder = [3, 9, 20, 15, 7];
 let inorder = [9, 3, 15, 20, 7];
 
-console.log(buildTree([], []));
+console.log(buildTree(preorder, inorder));
