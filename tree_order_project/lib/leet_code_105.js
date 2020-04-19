@@ -9,7 +9,9 @@ function buildTree(preorder, inorder) {
   // if the tree is empty return null
   if (!preorder.length && !inorder.length) return null;
 
+  // find the rootVal from preorder
   let rootVal = preorder[0];
+  // create our root tree node
   let root = new TreeNode(rootVal);
   let midIdx = inorder.indexOf(rootVal);
 
@@ -18,6 +20,7 @@ function buildTree(preorder, inorder) {
 
   let leftPreorder = preorder.filter(val => leftInorder.includes(val));
   let rightPreorder = preorder.filter(val => rightInorder.includes(val));
+  console.log(rightPreorder);
 
   let leftTree = buildTree(leftPreorder, leftInorder);
   let rightTree = buildTree(rightPreorder, rightInorder);
@@ -30,5 +33,15 @@ function buildTree(preorder, inorder) {
 
 let preorder = [3, 9, 20, 15, 7];
 let inorder = [9, 3, 15, 20, 7];
+
+/*
+first stack
+midIdx = 1;
+leftInorder = [9]
+rightInorder = [15, 20, 7]
+
+leftPreorder = [9]
+rightPreorder = []
+*/
 
 console.log(buildTree(preorder, inorder));
