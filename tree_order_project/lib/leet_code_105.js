@@ -17,10 +17,10 @@ function buildTree(preorder, inorder) {
 
   let leftInorder = inorder.slice(0, midIdx);
   let rightInorder = inorder.slice(midIdx + 1);
+  console.log(rightInorder);
 
   let leftPreorder = preorder.filter(val => leftInorder.includes(val));
   let rightPreorder = preorder.filter(val => rightInorder.includes(val));
-  console.log(rightPreorder);
 
   let leftTree = buildTree(leftPreorder, leftInorder);
   let rightTree = buildTree(rightPreorder, rightInorder);
@@ -41,7 +41,11 @@ leftInorder = [9]
 rightInorder = [15, 20, 7]
 
 leftPreorder = [9]
-rightPreorder = []
+rightPreorder = [20, 15, 7]
+
+  left substack buildTree([9], [9])
+  leftInorder = []
+  rightInorder = 
 */
 
 console.log(buildTree(preorder, inorder));
