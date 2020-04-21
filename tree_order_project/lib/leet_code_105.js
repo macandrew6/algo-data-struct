@@ -50,7 +50,13 @@ rightPreorder = [20, 15, 7]
   leftPreorder = []
   rightPreorder = []
 
-  => returns null
+  => returns treeNode(9)
+
+    left substack buildTree([], [])
+    returns null
+
+    right substack buildTree([], [])
+    returns null
 
   right substack buildTree([20, 15, 7], [15, 20, 7])
   leftInorder = [15]
@@ -59,8 +65,37 @@ rightPreorder = [20, 15, 7]
   leftPreorder = [15]
   rightPreorder = [7]
 
-  => returns ?
+  => returns treeNode(20)
+
     left substack buildTree([15], [15])
+    leftInorder = []
+    rightInorder = []
+
+    leftPreorder = []
+    rightPreorder = []
+
+    => returns treeNode(15)
+
+      left substack buildTree([], [])
+      return null
+
+      right substack buildTree([], [])
+      return null
+    
+    right substack buildTree([7], [7])
+    leftInorder = []
+    rightInorder = []
+
+    leftPreorder = []
+    rightPreorder = []
+
+    => returns treeNode(7)
+
+      left substack buildTree([], [])
+      return null
+
+      right substack buildTree([], [])
+      return null
 */
 
 console.log(buildTree(preorder, inorder));
