@@ -53,7 +53,14 @@ rightPreorder = [20, 15, 7]
   => returns null
 
   right substack buildTree([20, 15, 7], [15, 20, 7])
-  
+  leftInorder = [15]
+  rightInorder = [7]
+
+  leftPreorder = [15]
+  rightPreorder = [7]
+
+  => returns ?
+    left substack buildTree([15], [15])
 */
 
 console.log(buildTree(preorder, inorder));
