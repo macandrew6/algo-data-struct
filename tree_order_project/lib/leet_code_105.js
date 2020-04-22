@@ -43,6 +43,8 @@ rightInorder = [15, 20, 7]
 leftPreorder = [9]
 rightPreorder = [20, 15, 7]
 
+=> return treeNode(3)
+
   left substack buildTree([9], [9])
   leftInorder = []
   rightInorder = []
