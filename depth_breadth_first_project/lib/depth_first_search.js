@@ -8,6 +8,10 @@ function depthFirstSearch(root, targetVal) {
   // while theres something in the array keep going
   while (stack.length) {
     let node = stack.pop();
+    // if node exists
+    console.log(node.val);
+    if (node.right) stack.push(node.right);
+    if (node.left) stack.push(node.left);
   }
 }
 
