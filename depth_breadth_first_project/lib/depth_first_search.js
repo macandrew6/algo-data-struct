@@ -49,3 +49,5 @@ a.right = e;
 b.left = c;
 b.right = d;
 e.right = f;
+
+depthFirstSearch(a);
