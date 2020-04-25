@@ -42,12 +42,14 @@ let c = new TreeNode("c");
 let d = new TreeNode("d");
 let e = new TreeNode("e");
 let f = new TreeNode("f");
+let g = new TreeNode("g");
 
 // bst
 a.left = b;
 a.right = e;
 b.left = c;
 b.right = d;
-e.right = f;
+e.left = f;
+e.right = g;
 
 depthFirstSearch(a);
