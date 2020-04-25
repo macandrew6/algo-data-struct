@@ -9,7 +9,7 @@ function depthFirstSearch(root, targetVal) {
   while (stack.length) {
     let node = stack.pop();
     // if node exists
-    console.log(node.val);
+    console.log(node);
     if (node.right) stack.push(node.right);
     if (node.left) stack.push(node.left);
   }
