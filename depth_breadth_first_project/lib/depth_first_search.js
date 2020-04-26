@@ -9,6 +9,7 @@ function depthFirstSearch(root, targetVal) {
   while (stack.length) {
     let node = stack.pop();
     // if node exists
+    // console logs every leaf
     // console.log(node);
     if (node.val === targetVal) return node;
     if (node.right) stack.push(node.right);
