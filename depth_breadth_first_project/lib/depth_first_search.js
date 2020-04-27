@@ -23,6 +23,7 @@ module.exports = {
 
 /*
 DFS
+touches every leaf node first
         A
       /   \
     B       E
