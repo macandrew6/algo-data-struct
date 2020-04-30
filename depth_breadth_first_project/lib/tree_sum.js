@@ -21,6 +21,8 @@ function treeSum(root) {
   return sum;
 }
 
+// elegant recursive approach
+
 module.exports = {
   treeSum
 };
