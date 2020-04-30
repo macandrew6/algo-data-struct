@@ -11,10 +11,12 @@ function breadthFirstArray(root) {
     // build our array one node value at a time
     visited.push(node.val);
 
+    // visit lets node
     if (node.left) queue.push(node.left);
     if (node.right) queue.push(node.right);
   }
 
+  // return array of visited node vals
   return visited;
 }
 
