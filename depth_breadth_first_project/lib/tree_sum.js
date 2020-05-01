@@ -23,29 +23,29 @@
 // }
 
 // dfs approach
-function treeSum(root) {
-  if (!root) {
-    return 0;
-  }
+// function treeSum(root) {
+//   if (!root) {
+//     return 0;
+//   }
 
-  const stack = [root];
-  let sum = 0;
+//   const stack = [root];
+//   let sum = 0;
 
-  while (stack.length) {
-    let node = stack.pop();
-    console.log(sum);
+//   while (stack.length) {
+//     let node = stack.pop();
+//     console.log(sum);
 
-    sum += node.val;
+//     sum += node.val;
 
-    if (node.right) stack.push(node.right);
-    if (node.left) stack.push(node.left);
-  }
+//     if (node.right) stack.push(node.right);
+//     if (node.left) stack.push(node.left);
+//   }
 
-  return sum;
-}
+//   return sum;
+// }
 
 // elegant recursive approach
-
+function treeSum(root) {}
 module.exports = {
   treeSum
 };
