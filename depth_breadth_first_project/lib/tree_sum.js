@@ -46,10 +46,10 @@
 
 // elegant recursive approach
 function treeSum(root) {
-  let sum = 0;
+  if (!root) return 0;
   return treeSum(root.left) + root.val + treeSum(root.right);
 }
 
 module.exports = {
-  treeSum
+  treeSum,
 };
