@@ -75,6 +75,9 @@ function pow(base, exponent) {
   if (exponent < 0) {
     return 1 / pow(base, Math.abs(exponent));
   }
+  if (exponent > 0) {
+    return pow(base, exponent - 1);
+  }
 }
 
 // A 1-dimensional array is also known as a flattened array.
