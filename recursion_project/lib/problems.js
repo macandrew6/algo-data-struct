@@ -74,9 +74,8 @@ function pow(base, exponent) {
   if (exponent === 0) return 1;
   if (exponent < 0) {
     return 1 / pow(base, Math.abs(exponent));
-  }
-  if (exponent > 0) {
-    return pow(base, exponent - 1);
+  } else {
+    return base * pow(base, exponent - 1);
   }
 }
 
@@ -158,7 +157,17 @@ function flatten(data) {
 // fileFinder(desktop, 'app_academy_logo.svg');     // => true
 // fileFinder(desktop, 'everlong.flac');            // => true
 // fileFinder(desktop, 'sequoia.jpeg');             // => false
-function fileFinder(directories, targetFile) {}
+function fileFinder(directories, targetFile) {
+  for (let dir in directories) {
+    if (
+      dir === targetFile ||
+      fileFinder(directories[dir], targetFile) === true
+    ) {
+      return true;
+    }
+  }
+  return false;
+}
 
 // Write another function, pathFinder(directories, targetFile), that returns the path that contains the targetFile.
 // If the targetFile is not found in the directories, then return null.
