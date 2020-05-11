@@ -16,10 +16,13 @@
 // lucasNumberMemo(41)  // => 370248451
 // lucasNumberMemo(42)  // => 599074578
 function lucasNumberMemo(n, memo = {}) {
+  // if n is a key in the memoed hash return the value
   if (n in memo) return memo[n];
   if (n === 0) return 2;
   if (n === 1) return 1;
+  // save values for n inputs with n as the key and the value of lucasNumber(n - 1) + lucasNumber(n-2) as the value
   memo[n] = lucasNumberMemo(n - 1, memo) + lucasNumberMemo(n - 2, memo);
+  // return the values in the hash at key of n for each stack
   return memo[n];
 }
 
