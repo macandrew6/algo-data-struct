@@ -48,6 +48,9 @@ function minChange(coins, amount, memo = {}) {
       numCoins.push(minChange(coins, amount - coin, memo) + 1);
     }
   });
+
+  memo[amount] = Math.min(...numCoins);
+  return memo[amount];
 }
 
 module.exports = {
