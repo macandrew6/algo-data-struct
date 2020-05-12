@@ -42,7 +42,12 @@ function lucasNumberMemo(n, memo = {}) {
 function minChange(coins, amount, memo = {}) {
   if (amount === 0) return 0;
 
-  let num_coins = [];
+  let numCoins = [];
+  coins.forEach((coin) => {
+    if (coin <= amount) {
+      numCoins.push(minChange(coins, amount - coin, memo) + 1);
+    }
+  });
 }
 
 module.exports = {
