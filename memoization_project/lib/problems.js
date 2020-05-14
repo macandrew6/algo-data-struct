@@ -42,6 +42,7 @@ function lucasNumberMemo(n, memo = {}) {
 function minChange(coins, amount, memo = {}) {
   if (amount === 0) return 0;
 
+  // check to see if amount is already in the memoization
   if (amount in memo) return memo[amount];
 
   let numCoins = [];
