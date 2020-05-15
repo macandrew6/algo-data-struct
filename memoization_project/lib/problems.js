@@ -45,6 +45,7 @@ function minChange(coins, amount, memo = {}) {
   // check to see if amount is already in the memoization
   if (amount in memo) return memo[amount];
 
+  // init an array to store coins
   let numCoins = [];
   coins.forEach((coin) => {
     if (coin <= amount) {
