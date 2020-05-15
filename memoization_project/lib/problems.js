@@ -47,8 +47,11 @@ function minChange(coins, amount, memo = {}) {
 
   // init an array to store coins
   let numCoins = [];
+  // iterate through the coins
   coins.forEach((coin) => {
+    // if the coin is less than or equal to the amount
     if (coin <= amount) {
+      // then push the return value of minChange(coins, amount - coin, memo)
       numCoins.push(minChange(coins, amount - coin, memo) + 1);
     }
   });
