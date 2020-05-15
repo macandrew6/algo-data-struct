@@ -56,6 +56,7 @@ function minChange(coins, amount, memo = {}) {
     }
   });
 
+  // set the amount as a key to the smallest value in numCoins
   memo[amount] = Math.min(...numCoins);
   return memo[amount];
 }
