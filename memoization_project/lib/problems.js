@@ -58,6 +58,7 @@ function minChange(coins, amount, memo = {}) {
 
   // set the amount as a key to the smallest value in numCoins
   memo[amount] = Math.min(...numCoins);
+  // eventually push this value into the closure variable numCoins
   return memo[amount];
 }
 
