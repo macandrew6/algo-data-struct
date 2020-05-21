@@ -23,4 +23,6 @@ Explanation: the amount of 3 cannot be made up just with coins of
 2.
 */
 
-var change = function (amount, coins) {};
+var change = function (amount, coins) {
+  // outputs the number of combination of coins that make the amount
+};
