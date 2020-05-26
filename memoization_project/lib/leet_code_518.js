@@ -24,6 +24,7 @@ Explanation: the amount of 3 cannot be made up just with coins of
 */
 
 var change = function (amount, coins) {
+  if (counter === amount) return; //something
   // outputs the number of combination of coins that make the amount
   // initialize a counter
   let counter = 0;
