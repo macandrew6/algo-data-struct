@@ -31,4 +31,5 @@ var change = function (amount, coins) {
   // for each time it enters the recursive stack we want to increment the
   // counter
   // increment that counter until the amount is met
+  // 1 + the call to the change fn
 };
