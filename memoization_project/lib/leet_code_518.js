@@ -10,8 +10,8 @@ have infinite number of each kind of coin.
 example 1:
 Input: amount = 5, coins = [1, 2, 5]
 Output: 4
-Explanation: there are four ways to make up the amount:
 5=5
+Explanation: there are four ways to make up the amount:
 5=2+2+1
 5=2+1+1+1
 5=1+1+1+1+1
@@ -31,5 +31,5 @@ var change = function (amount, coins) {
   // for each time it enters the recursive stack we want to increment the
   // counter
   // increment that counter until the amount is met
-  // 1 + the call to the change fn
+  // return 1 + the call to the change fn
 };
