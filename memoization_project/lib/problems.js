@@ -62,6 +62,11 @@ function minChange(coins, amount, memo = {}) {
   return memo[amount];
 }
 
+function minChangeNoMem(coins, amount, memo = {}) {
+  if (amount === 0) return 0;
+  let numCoins = [];
+}
+
 module.exports = {
   lucasNumberMemo,
   minChange,
