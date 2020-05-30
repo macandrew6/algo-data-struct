@@ -65,6 +65,11 @@ function minChange(coins, amount, memo = {}) {
 function minChangeNoMem(coins, amount, memo = {}) {
   if (amount === 0) return 0;
   let numCoins = [];
+  coins.forEach((coin) => {
+    if (coin <= amount) {
+      numCoins.push(minChange(coins, amount - coin, memo) + 1);
+    }
+  });
 }
 
 module.exports = {
