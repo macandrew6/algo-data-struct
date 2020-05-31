@@ -70,6 +70,7 @@ function minChangeNoMem(coins, amount, memo = {}) {
       numCoins.push(minChange(coins, amount - coin, memo) + 1);
     }
   });
+  return numCoins;
 }
 
 module.exports = {
