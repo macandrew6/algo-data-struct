@@ -76,4 +76,7 @@ function minChangeNoMem(coins, amount, memo = {}) {
 module.exports = {
   lucasNumberMemo,
   minChange,
+  minChangeNoMem,
 };
+
+console.log(minChangeNoMem([1, 2, 5], 3));
