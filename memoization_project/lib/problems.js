@@ -80,3 +80,5 @@ module.exports = {
 };
 
 console.log(minChangeNoMem([1, 2, 5], 3));
+console.log(minChangeNoMem([1, 2, 5], 30));
+console.log(minChangeNoMem([1, 2, 5], 300));
