@@ -87,3 +87,13 @@ console.log(minChangeNoMem([1, 2, 5], 3000));
 console.log(minChangeNoMem([1, 2, 5], 3000));
 console.log(minChangeNoMem([1, 2, 5], 3000));
 console.log(minChangeNoMem([1, 2, 5], 3000));
+
+console.log(minChange([1, 2, 5], 3));
+console.log(minChange([1, 2, 5], 30));
+console.log(minChange([1, 2, 5], 300));
+console.log(minChange([1, 2, 5], 3000));
+// efficient computing
+console.log(minChange([1, 2, 5], 3000));
+console.log(minChange([1, 2, 5], 3000));
+console.log(minChange([1, 2, 5], 3000));
+console.log(minChange([1, 2, 5], 3000));
