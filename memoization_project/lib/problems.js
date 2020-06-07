@@ -93,6 +93,8 @@ console.log(minChange([1, 2, 5], 30));
 console.log(minChange([1, 2, 5], 300));
 console.log(minChange([1, 2, 5], 3000));
 // efficient computing because of memoization
+// memoization saves values in a hash so we have instant look up
+// when computing values
 console.log(minChange([1, 2, 5], 3000));
 console.log(minChange([1, 2, 5], 3000));
 console.log(minChange([1, 2, 5], 3000));
