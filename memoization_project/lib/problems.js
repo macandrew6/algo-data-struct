@@ -73,12 +73,6 @@ function minChangeNoMem(coins, amount, memo = {}) {
   return numCoins;
 }
 
-module.exports = {
-  lucasNumberMemo,
-  minChange,
-  minChangeNoMem,
-};
-
 // console.log(minChangeNoMem([1, 2, 5], 3));
 // console.log(minChangeNoMem([1, 2, 5], 30));
 // console.log(minChangeNoMem([1, 2, 5], 300));
@@ -99,3 +93,9 @@ module.exports = {
 // console.log(minChange([1, 2, 5], 3000));
 // console.log(minChange([1, 2, 5], 3000));
 // console.log(minChange([1, 2, 5], 3000));
+
+module.exports = {
+  lucasNumberMemo,
+  minChange,
+  minChangeNoMem,
+};
