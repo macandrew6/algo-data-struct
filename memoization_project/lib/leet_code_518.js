@@ -35,4 +35,5 @@ var change = function (amount, coins) {
   // returns each time it reaches the stack
   // watching instructional video from a/A
   // found solution to change
+  // optimizing solution with memoization
 };
