@@ -37,4 +37,5 @@ var change = function (amount, coins) {
   // found solution to change
   // optimizing solution with memoization
   // refactoring
+  // asking dev week companion how he would go about solving this problem
 };
