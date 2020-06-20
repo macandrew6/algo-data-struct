@@ -38,5 +38,6 @@ var change = function (amount, coins) {
   // optimizing solution with memoization
   // refactoring
   // asking dev week companion how he would go about solving this problem
-  // adding new inputs to break code
+  // adding new tests to break code
+  // broke code with new tests
 };
