@@ -40,4 +40,5 @@ var change = function (amount, coins) {
   // asking dev week companion how he would go about solving this problem
   // adding new tests to break code
   // broke code with new tests
+  // fixing broken code
 };
