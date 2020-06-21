@@ -33,7 +33,6 @@ var change = function (amount, coins) {
   // increment that counter until the amount is met
   // return 1 + the call to the change fn
   // returns each time it reaches the stack
-  // watching instructional video from a/A
   // optimizing solution with memoization
   // refactoring
   // asking dev week companion how he would go about solving this problem
