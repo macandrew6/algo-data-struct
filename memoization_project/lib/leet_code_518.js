@@ -34,7 +34,6 @@ var change = function (amount, coins) {
   // return 1 + the call to the change fn
   // returns each time it reaches the stack
   // watching instructional video from a/A
-  // found solution to change
   // optimizing solution with memoization
   // refactoring
   // asking dev week companion how he would go about solving this problem
