@@ -23,11 +23,9 @@ Explanation: the amount of 3 cannot be made up just with coins of
 2.
 */
 
-var change = function (amount, coins) {
-  if (counter === amount) return; //something
+var change = function (amt, coins, memo = {}) {
   // outputs the number of combination of coins that make the amount
   // initialize a counter
-  let counter = 0;
   // for each time it enters the recursive stack we want to increment the
   // counter
   // increment that counter until the amount is met
@@ -39,4 +37,19 @@ var change = function (amount, coins) {
   // adding new tests to break code
   // broke code with new tests
   // fixing broken code
+  if (amt === 0) return 1;
+  if (coins.length === 0) return 0;
+
+  let key = `${amt}-${coins.join(",")}`;
+  if (key in memo) return memo[key];
+
+  let coinVal = coins[coins.length - 1];
+
+  let total = 0;
+  for (let quanitity = 0; quanitity <= amt / coinVal; quanitity++) {
+    total += change(amt - quanitity * coinVal, coins.slice(0, -1), memo);
+  }
+
+  memo[key] = total;
+  return total;
 };
