@@ -39,5 +39,4 @@ var change = function (amount, coins) {
   // adding new tests to break code
   // broke code with new tests
   // fixing broken code
-  // working on new problem
 };
