@@ -31,7 +31,6 @@ var change = function (amt, coins, memo = {}) {
   // increment that counter until the amount is met
   // return 1 + the call to the change fn
   // returns each time it reaches the stack
-  // optimizing solution with memoization
   if (amt === 0) return 1;
   if (coins.length === 0) return 0;
 
