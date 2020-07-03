@@ -27,7 +27,6 @@ var change = function (amt, coins, memo = {}) {
   // outputs the number of combination of coins that make the amount
   // initialize a counter
   // increment that counter until the amount is met
-  // return 1 + the call to the change fn
   if (amt === 0) return 1;
   if (coins.length === 0) return 0;
 
