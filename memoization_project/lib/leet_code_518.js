@@ -24,8 +24,6 @@ Explanation: the amount of 3 cannot be made up just with coins of
 */
 
 var change = function (amt, coins, memo = {}) {
-  // outputs the number of combination of coins that make the amount
-  // initialize a counter
   if (amt === 0) return 1;
   if (coins.length === 0) return 0;
 
