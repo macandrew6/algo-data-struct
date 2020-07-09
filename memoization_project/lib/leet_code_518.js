@@ -28,6 +28,7 @@ var change = function (amt, coins, memo = {}) {
   // testing
   // adding tests
   // adding testing suites
+  // making adjustments to suites
   if (amt === 0) return 1;
   if (coins.length === 0) return 0;
 
