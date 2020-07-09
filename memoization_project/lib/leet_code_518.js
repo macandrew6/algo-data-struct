@@ -26,6 +26,7 @@ Explanation: the amount of 3 cannot be made up just with coins of
 var change = function (amt, coins, memo = {}) {
   // pseudo memoization
   // testing
+  // adding tests
   if (amt === 0) return 1;
   if (coins.length === 0) return 0;
 
