@@ -28,7 +28,6 @@ var change = function (amt, coins, memo = {}) {
   // testing
   // moving testing suite to another file
   // fixing one more issue
-  // moving code to github
 
   if (amt === 0) return 1;
   if (coins.length === 0) return 0;
