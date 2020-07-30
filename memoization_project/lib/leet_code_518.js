@@ -27,6 +27,7 @@ var change = function (amt, coins, memo = {}) {
   // pseudo memoization
   // testing
   // moving testing suite to another file
+  // eplaining code out loud
 
   if (amt === 0) return 1;
   if (coins.length === 0) return 0;
