@@ -29,6 +29,7 @@ var change = function (amt, coins, memo = {}) {
   // moving testing suite to another file
   // eplaining code out loud
   // pseudo code next problem
+  // solve with python
 
   if (amt === 0) return 1;
   if (coins.length === 0) return 0;
