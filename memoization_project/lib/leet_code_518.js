@@ -30,7 +30,6 @@ var change = function (amt, coins, memo = {}) {
   // eplaining code out loud
   // pseudo code next problem
   // solve with python
-  // trying selenium test suite
 
   if (amt === 0) return 1;
   if (coins.length === 0) return 0;
