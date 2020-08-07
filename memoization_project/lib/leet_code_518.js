@@ -31,6 +31,7 @@ var change = function (amt, coins, memo = {}) {
   // pseudo code next problem
   // solve with python
   // selenium testings
+  // auto testing suites
 
   if (amt === 0) return 1;
   if (coins.length === 0) return 0;
